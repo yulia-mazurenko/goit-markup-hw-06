@@ -247,8 +247,10 @@ span {
 .button {
   border-radius: 4px;
   border: none;
-  width: 200px;
-  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 32px;
+  padding-right: 32px;
 
   color: var(--accent-white-color);
   background-color: var(--accent-text-color);
@@ -580,7 +582,6 @@ span {
 
 .footer-links {
   width: 206px;
-  height: 80px;
   margin-left: 70px;
 }
 
@@ -603,6 +604,45 @@ span {
 .footer-links .social-icon:hover,
 .footer-links .social-icon:focus {
   background-color: var(--accent-text-color);
+}
+
+.footer-form {
+  width: 570px;
+  margin-left: 93px;
+}
+
+.button-mail {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  padding-left: 29px;
+  width: 200px;
+}
+
+.footer-form input {
+  width: 358px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 16px;
+  margin-right: 12px;
+
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-mailing {
+  display: flex;
+}
+
+.icon-send {
+  margin-left: 10px;
 }
 
 /* Портфолио */
@@ -805,6 +845,7 @@ span {
   left: 50%;
   width: 528px;
   height: 581px;
+  padding: 40px;
 
   background-color: var(--main-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -815,12 +856,165 @@ span {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button-close {
+.form-title {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 12px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+
+  color: var(--main-text-color);
+}
+
+.form-field {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  font-size: 12px;
+  line-height: 1.17;
+  margin-bottom: 10px;
+
+  letter-spacing: 0.01em;
+
+  color: var(--secondary-text-color);
+}
+
+.form-box {
+  position: relative;
+
+  color: var(--main-text-color);
+}
+
+.form-text {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.form-field input {
+  height: 40px;
+  padding: 0;
+  padding-left: 42px;
+  width: 100%;
+
+  border: 1px solid;
+  border-color: rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  outline: none;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-group {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.form-field input:hover,
+.form-field input:focus,
+.form-field textarea:hover,
+.form-field textarea:focus {
+  border: 1px solid;
+  border-color: var(--accent-text-color);
+  cursor: pointer;
+}
+
+.form-field input:focus + .form-pic,
+.form-field input:hover + .form-pic {
+  color: var(--accent-text-color);
+}
+
+.form-pic {
   position: absolute;
-  width: 18px;
-  height: 18px;
-  top: 8px;
-  right: 8px;
+  top: 50%;
+  left: 12px;
+
+  fill: currentColor;
+
+  transform: translateY(-50%);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-field textarea {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 10px;
+  resize: none;
+  padding: 11px 15px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+
+  outline: none;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-policy {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+
+  font-size: 14px;
+  line-height: 1.71;
+
+  color: var(--secondary-text-color);
+}
+
+.checkbox {
+  appearance: none;
+
+  position: absolute;
+}
+
+.icon-checkbox {
+  position: relative;
+  display: block;
+
+  width: 16px;
+  height: 15px;
+  margin-left: 12px;
+  margin-right: 8px;
+
+  border-radius: 2px;
+  border: 2px solid var(--main-text-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-check {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+
+.form-link {
+  color: var(--accent-text-color);
+  text-decoration-skip-ink: none;
+}
+
+.form-policy input:checked + .icon-checkbox {
+  border-color: transparent;
+  background-color: var(--accent-text-color);
+
+  background-size: contain;
+  background-origin: border-box;
+
+  cursor: pointer;
 }
 
 .modal-button {
@@ -832,4 +1026,28 @@ span {
   border: none;
   outline: none;
   background-color: transparent;
+
+  color: #000000;
+}
+
+.button-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  cursor: pointer;
+
+  fill: currentColor;
+}
+
+.modal-button:hover {
+  color: var(--accent-text-color);
+}
+
+.button-send {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  padding-left: 55px;
+  padding-right: 55px;
 }
